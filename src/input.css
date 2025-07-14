@@ -1,0 +1,6 @@
+@import "tailwindcss";
+<style>
+  .navbar-links {
+    gap: 1.5rem !important; /* atau 2rem untuk desktop */
+  }
+</style>
