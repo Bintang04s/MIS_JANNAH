@@ -8,8 +8,8 @@
                   <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white">MIS Raudhatul Jannah</span>
               </a>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
+          <div class="flex flex-col sm:flex-row justify-end gap-8 sm:gap-16 text-right w-full">
+              <div class="text-right">
 <h2 class="mb-6 text-sm font-semibold text-white uppercase">Resources</h2>
 <ul class="text-white font-medium">
                       <li class="mb-4">
@@ -32,7 +32,7 @@
                       </li>                                          
                   </ul>
               </div>
-              <div>
+              <div class="text-right">
 <h2 class="mb-6 text-sm font-semibold text-white uppercase">Follow us</h2>
 <ul class="text-white font-medium">
                       <li class="mb-4">
@@ -40,17 +40,6 @@
                       </li>
                       <li>
                           <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Youtube</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-<h2 class="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
-<ul class="text-white font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Privacy Policy</a>
-                      </li>
-                      <li>
-                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
                       </li>
                   </ul>
               </div>
