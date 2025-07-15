@@ -53,14 +53,21 @@
         <a href="https://flowbite.com/" class="hover:underline">Tim Hibah PkM</a>. All Rights Reserved.<br>
         Pemberdayaan Guru Madrasah Ibtidaiyah Raudhatul Jannah melalui Implementasi Sistem Informasi Digital berbasis Google Sites.<br>
         Didanai oleh Direktorat Penelitian dan Pengabdian kepada Masyarakat (DPPM) – Tahun Anggaran 2025.<br>
-        Tim Pengusul: Sarwati Rahayu, S.T., M.MSI | Hery Derajad Wijaya, S.Kom., M.M | Dwi Ade Handayani Capah, S.Kom., M.Kom | Muhamad Bintang Saputra | Fairuz Zaki
+        Tim Pengusul: Sarwati Rahayu, S.T.,MMSI | Hery Derajad Wijaya, S.Kom., MM | Dwi Ade Handayani Capah, S.Kom., M.Kom | Muhamad Bintang Saputra | Fairuz Zaki
     </span>
     <div class="flex mt-4 sm:mt-0 sm:ml-4"></div>
+
 <a href="https://instagram.com" class="text-white hover:text-gray-200" target="_blank" rel="noopener">
   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1-5.25 5.25A5.25 5.25 0 0 1 12 6.75zm0 1.5a3.75 3.75 0 1 0 3.75 3.75A3.75 3.75 0 0 0 12 8.25zm5.5-.75a1 1 0 1 1-1 1a1 1 0 0 1 1-1z"/>
   </svg>
   <span class="sr-only">Instagram</span>
+</a>
+<a href="https://youtube.com" class="text-white hover:text-gray-200 ms-5" target="_blank" rel="noopener">
+  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M23.498 6.186a2.958 2.958 0 0 0-2.082-2.09C19.379 3.5 12 3.5 12 3.5s-7.379 0-9.416.596a2.958 2.958 0 0 0-2.082 2.09C0 8.222 0 12 0 12s0 3.778.502 5.814a2.958 2.958 0 0 0 2.082 2.09C4.621 20.5 12 20.5 12 20.5s7.379 0 9.416-.596a2.958 2.958 0 0 0 2.082-2.09C24 15.778 24 12 24 12s0-3.778-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+  <span class="sr-only">Youtube</span>
 </a>
 <a href="https://api.whatsapp.com/send/?phone=%2B6281387017219&text&type=phone_number&app_absent=0" class="text-white hover:text-gray-200 ms-5" target="_blank" rel="noopener">
   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">

@@ -349,7 +349,7 @@
             for (let i = start; i < end; i++) {
                 const modul = modulSlides[i];
                 const card = document.createElement('div');
-                card.className = 'bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center fade-section';
+                card.className = 'bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center';
                 card.innerHTML = `
                     <div class="w-full aspect-video flex items-center justify-center bg-gray-100 cursor-pointer group relative">
                         <iframe src="${modul.src}" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" class="w-full h-60 md:h-64 lg:h-72 ${window.innerWidth < 768 ? 'pointer-events-none' : ''} group-hover:ring-2 group-hover:ring-primary"></iframe>
@@ -436,26 +436,7 @@
         }
         renderModulGrid(modulPage);
         renderModulPagination();
-        // Trigger IntersectionObserver for fade-section on new cards
-        setTimeout(() => {
-            const fadeSections = document.querySelectorAll('.fade-section');
-            if (window.IntersectionObserver) {
-                const observer = new window.IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            entry.target.classList.remove('out');
-                        } else {
-                            entry.target.classList.remove('visible');
-                            entry.target.classList.add('out');
-                        }
-                    });
-                }, { threshold: 0.65 });
-                fadeSections.forEach(section => {
-                    observer.observe(section);
-                });
-            }
-        }, 100);
+        // Fade-section removed from modul cards to fix pagination bug
         </script>
         </section>
 
