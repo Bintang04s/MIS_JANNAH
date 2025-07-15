@@ -3,7 +3,7 @@
 <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 shadow-sm">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
         <!-- Logo dan Nama Sekolah -->
-        <a href="index.php" class="flex items-center space-x-2 rtl:space-x-reverse">
+        <a href="home.php" class="flex items-center space-x-2 rtl:space-x-reverse">
             <!-- Logo Sekolah -->
             <img src="../images/logo.png" class="h-10" alt="Logo MIS Ibtidaiyah Raudhatul Jannah">
             <span class="self-center text-xl font-semibold whitespace-nowrap text-[#2e9149] uppercase">
