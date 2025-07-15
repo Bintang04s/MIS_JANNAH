@@ -34,7 +34,7 @@
 </style>
     <header class="hero-gradient min-h-screen px-10 sm:px-10 md:px-20 lg:px-28 py-10 relative">
         <img src="../images/kontak.jpg" alt="Banner Home" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-none: rounded-none" style="z-index:0;">
-        <div class="max-w-7xl mx-auto flex items-center justify-center h-[calc(100vh-80px)]">
+        <div class="max-w-7xl mx-auto flex items-center justify-center min-h-[calc(100vh-64px)]">
             <div class="text-center px-4">
                 <h1 class="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white uppercase break-words text-center max-w-xs sm:max-w-2xl mx-auto fade-section">MIS Ibtidaiyah Raudhatul Jannah</h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto fade-section">
@@ -45,21 +45,23 @@
 
     </header>
     
-    <section class="py-42 bg-[#ffffff]">
+    <section class="py-48 bg-[#ffffff]">
         <div class="max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-12">
             <!-- Gambar di sebelah kiri (float left on desktop) -->
-            <div class="order-1 md:order-1 md:w-1/3 w-full flex justify-center md:justify-start fade-section">
+            <div class="order-1 md:order-1 md:w-1/3 w-full flex justify-center md:justify-start fade-section" style="height: 320px; min-height: 320px;">
               <img 
-                src="../images/Penasehat_Madrasah.png" 
-                alt="Kepala Madrasah" 
-                class="rounded-lg shadow-xl object-cover w-full max-w-xs md:max-w-[300px] min-w-[180px] md:min-w-[240px] h-64 sm:h-72 md:h-56 xl:h-64"
+              src="../images/Penasehat_Madrasah.png" 
+              alt="Kepala Madrasah" 
+              class="rounded-lg shadow-xl object-cover w-full max-w-xs md:max-w-[300px] min-w-[180px] md:min-w-[240px] h-72 sm:h-80 md:h-56 xl:h-64"
+              style="height: 100%;"
               />
             </div>
             <!-- Teks di sebelah kanan -->  
             <div class="order-2 w-full text-justify fade-section">
-              <h2 class="text-2xl md:text-3xl font-bold text-[#2e9149] mb-4 text-center md:text-left">Sambutan Penasehat Sekolah</h2>
-              <p class="text-base md:text-lg text-[#2e9149] mb-8 mx-4 md:mx-0">(Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di website resmi MI Ibtidaiyah Raudhatul Jannah. Kami berkomitmen untuk mencetak generasi Qur'ani yang berakhlak mulia dan berprestasi di bidang akademik maupun non-akademik.)</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-[#2e9149] mb-4 text-center md:text-left uppercase">Sambutan Penasehat Madrasah</h2>
+              <p class="text-base md:text-lg text-[#2e9149] mb-8 mx-4 md:mx-0">Alhamdulillah MIS Raudhatul Jannah semakin di minati oleh masyarakat berkat dukungan tokoh masyarakat,tokoh Agama dan alim ulama, setempat.
+                Semoga MIS Raudhatul Jannah menjadi yang terbaik melahir generasi yang unggul dan berakhlak mulia, Aamiin</p>
             </div>
           </div>
         </div>
@@ -67,7 +69,7 @@
 
     <section class="py-12" style="background-color: #2e9149;">
         <div class="max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold text-center text-[#ffffff] mb-8 C">Kegiatan Terbaru</h2>
+          <h2 class="text-2xl font-bold text-center text-[#ffffff] mb-8 C uppercase">Kegiatan Terbaru</h2>
           <div class="relative flex justify-center items-center py-4 md:py-8 fade-section">
             <button id="kegiatan-prev" class="inline-flex items-center justify-center bg-white text-[#2e9149] rounded-full shadow p-2 z-10 hover:bg-emerald-100 transition absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2" aria-label="Sebelumnya">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
@@ -97,7 +99,7 @@
 
     <section class="py-12 bg-gray-50">
       <div class="max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-center text-[#2e9149] mb-8 fade-section ">Galeri Kami</h2>
+        <h2 class="text-2xl font-bold text-center text-[#2e9149] mb-8 fade-section uppercase">Galeri Kami</h2>
         <div class="relative flex justify-center items-center py-4 md:py-8 fade-section">
           <button id="galeri-prev" class="inline-flex items-center justify-center bg-white text-[#2e9149] rounded-full shadow p-2 z-10 hover:bg-emerald-100 transition absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2" aria-label="Sebelumnya">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
@@ -166,9 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
         entry.target.classList.remove('visible');
         entry.target.classList.add('out');
       }
-    });
+    });   
   }, {
-    threshold: 0.45
+    threshold: 0.65
   });
   fadeSections.forEach(section => {
     observer.observe(section);

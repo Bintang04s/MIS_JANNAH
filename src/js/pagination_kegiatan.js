@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
     for (let i = start; i < end; i++) {
       const kegiatan = data[i];
       const card = document.createElement('div');
-      card.className = 'bg-white rounded-lg shadow-lg overflow-hidden flex flex-col w-[92vw] max-w-sm md:max-w-[300px] min-w-[240px] md:min-w-[240px] h-[550px] md:h-[550px] text-[#2e9149] mx-2 md:mx-4 transition-transform duration-200 ease-in-out hover:scale-105 fade-section';
+      card.className = 'kegiatan-card fade-section bg-white rounded-lg shadow-lg overflow-hidden flex flex-col w-[92vw] max-w-sm md:max-w-[300px] min-w-[240px] md:min-w-[240px] h-[550px] md:h-[550px] text-[#2e9149] mx-2 md:mx-4 transition-transform duration-200 ease-in-out hover:scale-105';
       card.innerHTML = `
         <img src="${kegiatan.img}" alt="${kegiatan.judul}" class="w-full h-48 md:h-56 object-cover">
         <div class="p-4 flex flex-col flex-1">
@@ -34,6 +34,18 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     // Atur grid agar 3 kolom di desktop
     slider.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6';
+    // Trigger ulang observer untuk card baru
+    if (window.kegiatanFadeObserver) {
+      document.querySelectorAll('.fade-section').forEach(section => {
+        window.kegiatanFadeObserver.observe(section);
+      });
+    }
+    // Setelah card dirender, jalankan ulang Intersection Observer untuk animasi fade-section
+    if (window.kegiatanFadeObserver) {
+      document.querySelectorAll('.fade-section').forEach(section => {
+        window.kegiatanFadeObserver.observe(section);
+      });
+    }
   }
 
   function renderPagination() {

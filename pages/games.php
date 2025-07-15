@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html>
 <head>
   <style>
@@ -56,56 +56,54 @@
         <script type="application/json" id="data_games">
             <?php
             include_once __DIR__ . '/../includes/data_games.php';
-            $data_games_fixed = array_map(function($item) {
-            if (isset($item['img']) && strpos($item['img'], '../') === false) {
-                $item['img'] = '../' . $item['img'];
-            }
-            return $item;
-            }, $data_games);
-            echo json_encode($data_games_fixed);
+            // Jangan ubah path gambar, biarkan tetap '../images/games/xxx.png'
+            echo json_encode($data_games);
             ?>
         </script>
+
+        <script>
+        // Debug: cek data games di console
+        try {
+          const dataGames = JSON.parse(document.getElementById('data_games').textContent);
+          console.log('Data games:', dataGames);
+        } catch(e) {
+          console.error('Gagal parse data games:', e);
+        }
+        </script>
+        <script>
+        // Intersection Observer global untuk animasi fade-section (agar bisa di-trigger ulang dari JS)
+        document.addEventListener('DOMContentLoaded', function() {
+          const observer = new window.IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                entry.target.classList.remove('out');
+              } else {
+                entry.target.classList.remove('visible');
+                entry.target.classList.add('out');
+              }
+            });
+          }, {
+            threshold: 0.65
+          });
+          window.kegiatanFadeObserver = observer;
+          document.querySelectorAll('.fade-section').forEach(section => {
+            observer.observe(section);
+          });
+        });
+        </script>
         <script src="../src/js/Games.js"></script>
+        <script>
+        // Debug: tangkap error JS global
+        window.addEventListener('error', function(e) {
+          console.error('JS Error:', e.message, e.filename, e.lineno);
+        });
+        window.addEventListener('unhandledrejection', function(e) {
+          console.error('Promise Error:', e.reason);
+        });
+        </script>
         </div>                            
     </section>
-
-<script>
-// Tambahkan fade-section ke setiap card games setelah data dimuat
-document.addEventListener('DOMContentLoaded', function() {
-  const gamesSlider = document.getElementById('kegiatan-slider');
-  if (gamesSlider) {
-    const observer = new MutationObserver(() => {
-      gamesSlider.querySelectorAll('.card-games').forEach(card => {
-        card.classList.add('fade-section');
-      });
-    });
-    observer.observe(gamesSlider, { childList: true, subtree: true });
-  }
-});
-</script>
-
-<script>
-// Intersection Observer untuk animasi scroll masuk/keluar viewport
-document.addEventListener('DOMContentLoaded', function() {
-  const fadeSections = document.querySelectorAll('.fade-section');
-  const observer = new window.IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.remove('out');
-      } else {
-        entry.target.classList.remove('visible');
-        entry.target.classList.add('out');
-      }
-    });
-  }, {
-    threshold: 0.45
-  });
-  fadeSections.forEach(section => {
-    observer.observe(section);
-  });
-});
-</script>
 
 </body>
 <?php include '../includes/footer.php'; ?>

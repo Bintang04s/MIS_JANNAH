@@ -168,22 +168,22 @@
                     </div>
                     
                     <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 fade-section">
-                        <div class="text-center p-4 bg-primary-50 rounded-lg fade-section">
+                        <a href="https://referensi.data.kemdikbud.go.id/pendidikan/npsn/60721512" target="_blank" class="block text-center p-4 bg-primary-50 rounded-lg fade-section hover:bg-primary-100 transition">
                             <div class="text-primary-600 text-3xl font-bold">60721512</div>
                             <div class="text-primary-900">NPSN</div>
-                        </div>
-                        <div class="text-center p-4 bg-primary-50 rounded-lg fade-section">
+                        </a>
+                        <a href="https://referensi.data.kemdikbud.go.id/pendidikan/npsn/60721512" target="_blank" class="block text-center p-4 bg-primary-50 rounded-lg fade-section hover:bg-primary-100 transition">
                             <div class="text-primary-600 text-3xl font-bold">Swasta</div>
                             <div class="text-primary-900">Status</div>
-                        </div>
-                        <div class="text-center p-4 bg-primary-50 rounded-lg fade-section">
+                        </a>
+                        <a href="https://referensi.data.kemdikbud.go.id/pendidikan/npsn/60721512" target="_blank" class="block text-center p-4 bg-primary-50 rounded-lg fade-section hover:bg-primary-100 transition">
                             <div class="text-primary-600 text-3xl font-bold">B</div>
                             <div class="text-primary-900">Akreditasi</div>
-                        </div>
-                        <div class="text-center p-4 bg-primary-50 rounded-lg fade-section">
+                        </a>
+                        <a href="https://referensi.data.kemdikbud.go.id/pendidikan/npsn/60721512" target="_blank" class="block text-center p-4 bg-primary-50 rounded-lg fade-section hover:bg-primary-100 transition">
                             <div class="text-primary-600 text-3xl font-bold">1989</div>
-                            <div class="text-primary-900">Tahun Beridiri</div>
-                        </div>
+                            <div class="text-primary-900">Tahun Berdiri</div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, {
-    threshold: 0.45
+    threshold: 0.65
   });
   fadeSections.forEach(section => {
     observer.observe(section);

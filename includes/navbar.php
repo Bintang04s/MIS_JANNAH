@@ -6,8 +6,10 @@
         <a href="index.php" class="flex items-center space-x-2 rtl:space-x-reverse">
             <!-- Logo Sekolah -->
             <img src="../images/logo.png" class="h-10" alt="Logo MIS Ibtidaiyah Raudhatul Jannah">
-            <span class="self-center text-xl font-semibold whitespace-nowrap text-[#2e9149]">
-                <?php echo $site_name; ?>
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-[#2e9149] uppercase">
+                <span class="self-center text-base sm:text-lg md:text-xl font-semibold whitespace-nowrap text-[#2e9149] uppercase">
+                    <?php echo $site_name; ?>
+                </span>
             </span>
         </a>
 
@@ -24,10 +26,14 @@
         <!-- Navigation Links (Desktop) - Pojok Kanan -->
         <div class="hidden w-full md:flex md:w-auto md:order-1 justify-end" id="navbar-sticky">
             <ul class="flex flex-col md:flex-row md:space-x-6 p-0 md:p-0 mt-4 md:mt-0 font-medium border-0 md:border-0 rounded-none bg-transparent md:bg-white">
-                <?php foreach ($nav_links as $link): ?>
-                    <li>
-                        <a href="<?php echo $link['url']; ?>" class="block py-2 px-3 text-[#2e9149] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#1e6b35] md:p-0 transition duration-300">
+                <?php foreach ($nav_links as $link): 
+                    $current_page = basename($_SERVER['PHP_SELF']);
+                    $is_active = ($current_page === basename($link['url'])) ? 'text-[#2e9149] font-bold' : 'text-gray-600 hover:text-[#2e9149]';
+                ?>
+                    <li class="relative group">
+                        <a href="<?php echo $link['url']; ?>" class="block py-2 px-3 rounded md:p-0 transition duration-300 <?php echo $is_active; ?>">
                             <?php echo $link['name']; ?>
+                            <span class="absolute left-0 bottom-0 h-0.5 bg-[#2e9149] w-0 group-hover:w-full transition-all duration-300 <?php echo ($current_page === basename($link['url'])) ? 'w-full' : ''; ?>"></span>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -37,10 +43,14 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div class="hidden md:hidden w-full" id="mobile-menu">
             <ul class="flex flex-col w-full p-0 mt-2 font-medium bg-white shadow-lg rounded-b-lg overflow-hidden">
-                <?php foreach ($nav_links as $link): ?>
-                    <li>
-                        <a href="<?php echo $link['url']; ?>" class="block py-2 px-3 text-[#2e9149] rounded hover:bg-gray-100 transition duration-300">
+                <?php foreach ($nav_links as $link): 
+                    $current_page = basename($_SERVER['PHP_SELF']);
+                    $is_active = ($current_page === basename($link['url'])) ? 'text-[#2e9149] font-bold' : 'text-gray-600 hover:text-[#2e9149]';
+                ?>
+                    <li class="relative group">
+                        <a href="<?php echo $link['url']; ?>" class="block py-2 px-3 rounded transition duration-300 <?php echo $is_active; ?>">
                             <?php echo $link['name']; ?>
+                            <span class="absolute left-3 right-3 bottom-1 h-0.5 bg-[#2e9149] w-0 group-hover:w-[calc(100%-1.5rem)] transition-all duration-300 <?php echo ($current_page === basename($link['url'])) ? 'w-[calc(100%-1.5rem)]' : ''; ?>"></span>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -62,3 +72,12 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
     }
 });
 </script>
+
+<style>
+/* Untuk memastikan posisi underline tepat */
+li.relative a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+</style>

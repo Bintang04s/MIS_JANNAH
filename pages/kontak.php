@@ -82,7 +82,7 @@
                                 <p class="text-gray-600 text-base mb-4">081387017219 (Wandi)<br>raudhatuljannahm@gmail.com</p>
                                 <div class="flex flex-wrap gap-3">
                                     <a 
-                                        href="tel:081387017219" 
+                                        href="https://api.whatsapp.com/send/?phone=%2B6281387017219&text&type=phone_number&app_absent=0" 
                                         class="inline-flex items-center bg-[#2e9149] rounded-lg px-4 py-2 text-white hover:bg-green-600 transition-all duration-300 text-base font-medium shadow-sm"
                                     >
                                         <i class="fa-brands fa-whatsapp mr-2"></i>
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, {
-    threshold: 0.45
+    threshold: 0.65
   });
   fadeSections.forEach(section => {
     observer.observe(section);

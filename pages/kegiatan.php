@@ -50,7 +50,7 @@
           </div>
           <div class="relative flex justify-center items-center py-4 md:py-8">
             <div class="flex-1 flex justify-center items-center" style="overflow:visible;">
-              <div id="kegiatan-slider" class="flex flex-row md:flex-row gap-4 md:gap-16 justify-start items-stretch w-full mx-8 md:mx-24 lg:mx-40 overflow-x-visible md:overflow-x-visible"></div>
+              <div id="kegiatan-slider"></div>
             </div>
           </div>
           <script type="application/json" id="kegiatan-terbaru-data">
@@ -59,25 +59,32 @@
           echo json_encode($data_kegiatan);
           ?>
           </script>
-          <script src="../src/js/pagination_kegiatan.js"></script>
-<script>
-// Tambahkan fade-section ke setiap card kegiatan setelah data dimuat
-document.addEventListener('DOMContentLoaded', function() {
-  const kegiatanSlider = document.getElementById('kegiatan-slider');
-  if (kegiatanSlider) {
-    const observer = new MutationObserver(() => {
-      kegiatanSlider.querySelectorAll('.kegiatan-card').forEach(card => {
-        card.classList.add('fade-section');
-      });
-    });
-    observer.observe(kegiatanSlider, { childList: true, subtree: true });
-  }
-});
-</script>
+          <?php if (empty($data_kegiatan) || !is_array($data_kegiatan) || count($data_kegiatan) === 0): ?>
+            <div class="text-center text-red-600 font-bold py-8">Data kegiatan belum tersedia.</div>
+          <?php endif; ?>
+        <script>
+        // Debug: cek data kegiatan di console
+        try {
+          const kegiatanData = JSON.parse(document.getElementById('kegiatan-terbaru-data').textContent);
+          console.log('Data kegiatan:', kegiatanData);
+        } catch(e) {
+          console.error('Gagal parse data kegiatan:', e);
+        }
+        </script>
+        <script src="../src/js/pagination_kegiatan.js"></script>
+        <script>
+        // Debug: tangkap error JS global
+        window.addEventListener('error', function(e) {
+          console.error('JS Error:', e.message, e.filename, e.lineno);
+        });
+        window.addEventListener('unhandledrejection', function(e) {
+          console.error('Promise Error:', e.reason);
+        });
+        </script>
+<!-- MutationObserver dihapus, tidak diperlukan jika class sudah benar di JS -->
 <script>
 // Intersection Observer untuk animasi scroll masuk/keluar viewport
 document.addEventListener('DOMContentLoaded', function() {
-  const fadeSections = document.querySelectorAll('.fade-section');
   const observer = new window.IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -89,9 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, {
-    threshold: 0.45
+    threshold: 0.65
   });
-  fadeSections.forEach(section => {
+  window.kegiatanFadeObserver = observer;
+  document.querySelectorAll('.fade-section').forEach(section => {
     observer.observe(section);
   });
 });

@@ -38,6 +38,12 @@ function renderSlide(slideIdx) {
     setTimeout(() => {
       sliderGrid.classList.remove('opacity-0');
     }, 10);
+    // Trigger ulang Intersection Observer untuk animasi fade-section
+    if (window.kegiatanFadeObserver) {
+      document.querySelectorAll('.fade-section').forEach(section => {
+        window.kegiatanFadeObserver.observe(section);
+      });
+    }
   }, 200);
 }
 
