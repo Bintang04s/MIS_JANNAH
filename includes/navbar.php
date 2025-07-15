@@ -66,8 +66,10 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
     mobileMenu.classList.toggle('hidden');
     // Scroll lock body saat menu mobile terbuka
     if (!mobileMenu.classList.contains('hidden')) {
+        document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
     } else {
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
     }
 });
@@ -79,5 +81,18 @@ li.relative a {
     position: relative;
     display: inline-block;
     padding-bottom: 2px;
+}
+/* Hilangkan scroll bar horizontal dan vertical yang tidak perlu */
+html, body {
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    /* Sembunyikan scrollbar tapi tetap bisa scroll */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
 }
 </style>
